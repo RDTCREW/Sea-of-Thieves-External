@@ -25,10 +25,6 @@
     <LinkIncremental>false</LinkIncremental>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <ClCompile />
-    <Link>
-      <GenerateDebugInformation>false</GenerateDebugInformation>
-    </Link>
     <ClCompile>
       <SDLCheck>true</SDLCheck>
       <WarningLevel>Level4</WarningLevel>

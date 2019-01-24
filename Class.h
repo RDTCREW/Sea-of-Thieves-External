@@ -13,7 +13,7 @@ using namespace std;
 
 auto GameFile = "SoTGame.exe";
 auto GameName = "Sea of Thieves";
-auto ItemName = "External Esp W/Players";
+auto ItemName = "External Esp W/Players [SimplyHackin]";
 
 DWORD_PTR GNames, UEngine, UViewport, UPlayer;
 HANDLE Process;
@@ -22,28 +22,33 @@ RECT Frame;
 ID2D1Factory* Factory;
 ID2D1HwndRenderTarget* RenderTarget;
 ID2D1SolidColorBrush* Brush;
+ID2D1SolidColorBrush * BlackBrush;
 IDWriteTextFormat* TextFormat;
 IDWriteFactory* DWriteFactory;
 
 auto Player = ColorF(ColorF::Red, 1);
 auto Ammo = ColorF(ColorF::Red, 1);
-auto Rowboat = ColorF(ColorF::Orange, 1);
-auto Ship = ColorF(ColorF::LimeGreen, 1);
+auto Rowboat = ColorF(ColorF::DarkOrange, 1);
+auto Ship = ColorF(ColorF::Lime, 1);
 auto Cannonball = ColorF(ColorF::DarkOrange, 1);
 auto Mermaid = ColorF(ColorF::LightSteelBlue, 1);
 auto Crate = ColorF(ColorF::Silver, 1);
-auto Ghostship = ColorF(ColorF::Red, 0.9);
-auto Enemy = ColorF(ColorF::Maroon, 1);
+auto Ghostship = ColorF(ColorF::IndianRed, 1);
+auto Enemy = ColorF(ColorF::Crimson, 1);
 auto Shark = ColorF(ColorF::Firebrick, 1);
 auto Shipwreck = ColorF(ColorF::White, 1);
 auto Common = ColorF(ColorF::Gainsboro, 1);
-auto Rare = ColorF(ColorF::SteelBlue, 1);
-auto Legendary = ColorF(ColorF::Purple, 1);
+auto Rare = ColorF(ColorF::DodgerBlue, 1);
+auto Legendary = ColorF(ColorF::DarkOrchid, 1);
 auto Mythical = ColorF(ColorF::DarkOrange, 1);
-auto Cloud = ColorF(ColorF::Silver, 5);
+auto Cloud = ColorF(ColorF::DeepSkyBlue, 5);
 auto FogStorm = ColorF(ColorF::White, 1);
 auto Gunpowder = ColorF(ColorF::Yellow, 1);
 auto Megalodon = ColorF(ColorF::Orange, 1);
+auto Kraken = ColorF(ColorF::Firebrick, 1);
+auto Outpost = ColorF(ColorF::RoyalBlue, 1);
+auto Emerald = ColorF(ColorF::Green ,1);
+auto Sapphire = ColorF(ColorF::MediumBlue ,1);
 
 vector<DWORD> GNamesPattern = { 0x48, 0x89, 0x1D, 0x00, 0x00, 0x00, 0x00, 0x8B, 0xC3 };
 vector<DWORD> UEnginePattern = { 0x48, 0x8B, 0x35, 0x00, 0x00, 0x00, 0x00, 0x33, 0xDB };
@@ -120,7 +125,7 @@ int Setup() {
 			break;
 		}
 	}
-
+//Source made by simplyHacking
 	CloseHandle(mSnapshot);
 	Process = OpenProcess(MAXIMUM_ALLOWED, 0, PID);
 
@@ -205,8 +210,8 @@ FVector WorldToScreen(FVector WorldLocation, FMinimalViewInfo Camera, float Size
 	auto Z = FVector{ -(CR * SP * CY + SR * SY), CY * SR - CR * SP * SY, CR * CP };
 
 	auto Transform = FVector{ WorldLocation.Dot(Y), WorldLocation.Dot(Z), WorldLocation.Dot(X) };
-	if (Transform.Z < 1.f)
-		Transform.Z = 1.f;
+	if (Transform.Z < 0.7)
+		Transform.Z = 0.7;
 
 	FVector Location;
 	Location.X = SizeX + Transform.X * (SizeX / tan(Camera.FOV * PI / 360.f)) / Transform.Z;

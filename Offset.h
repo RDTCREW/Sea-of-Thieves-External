@@ -15,7 +15,7 @@ auto PersistentLevel = 0x0030;
 // ULevel:TArray<AActor*>
 auto LevelArray = 0x00A0;
 
-/* ---------------------------------*/
+//Source made by simplyHacking
 
 // UGameViewportClient:UGameInstance*
 auto GameInstance = 0x0088;
@@ -29,15 +29,7 @@ auto PlayerController = 0x0030;
 // AController:APawn*
 auto Pawn = 0x0498;
 
-/* ---------------------------------*/
-
-// APawn:APlayerState*
-auto PlayerState = 0x04B0;
-
-// APlayerState:FString
-auto PlayerName = 0x0498;
-
-/* ---------------------------------*/
+//Source made by simplyHacking
 
 // APawn:USceneComponent*
 auto RootComponent = 0x0170;
@@ -45,7 +37,7 @@ auto RootComponent = 0x0170;
 // USceneComponent:FTransform
 auto ComponentToWorld = 0x0130;
 
-/* ---------------------------------*/
+//Source made by simplyHacking
 
 // APlayerController:APlayerCameraManager*
 auto PlayerCameraManager = 0x0520;
@@ -55,3 +47,11 @@ auto CameraCache = 0x0500;
 
 // FCameraCacheEntry:FMinimalViewInfo
 auto POV = 0x0010;
+
+/* ---------------------------------*/
+
+// APawn:APlayerState*
+auto PlayerState = 0x04B0;
+
+// APlayerState:FString
+auto PlayerName = 0x0498;
